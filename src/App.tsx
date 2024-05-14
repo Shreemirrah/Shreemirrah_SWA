@@ -54,7 +54,7 @@ function App() {
   const dataString = JSON.stringify(processedData, null, 2);
   try {
     const response = await axios.post('https://shreemirrah-credit-card-functionapp-test.azurewebsites.net/api/shreemirrah_http_trigger', dataString);
-    setPred(response.data.prediction);
+    setPred(response.data);
   } catch (error) {
     setPred('Error: Unable to fetch prediction from Azure Function');
   }
